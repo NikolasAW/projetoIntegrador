@@ -1,4 +1,4 @@
-# projetoIntegrador
+# ProjetoIntegrador
 # Grupo projeto integrador
 * Nikolas
 * Mauricío
