@@ -1,37 +1,20 @@
 <?php
-include 'include/MySql.php';
-session_start();
+       include 'include/MySql.php';
+if (isset($_POST['acao'])){
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-
-if (isset($_GET['cadastro'])) {
-    $nome = $_GET['nome'];
-    $email = $_GET['email'];
-    $senha = $_GET['senha'];
-    $senhaConfirma = $_GET['confirma'];
-
-    if ($senha == "" || $senha != $senhaConfirma) {
-        echo "<b>Aviso</b>: Senha incorreta!";
-    } else {
-        $sql = $pdo->prepare("SELECT * FROM cadastrados WHERE email = ?");
-        if ($sql->execute(array($email))) {
-            $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-            if (count($info) > 0) {
-                echo '<h6>Email de usuário já cadastrado. Cadastre novamente!';
-            } else {
-                $sql = $pdo->prepare("INSERT INTO cadastrados (cod_usuario
-                ,nome,email,senha)
-    values (null,?,?,?)");
-                if ($sql->execute(array($nome, $email, $senha))) {
-                    echo 'Dados cadastrados com sucesso';
-                    header('location:index.php');
-                } else {
-                    echo 'Dados não cadastrados!';
-                }
-            }
+    $sql = $pdo->prepare("SELECT * FROM cadastrados 
+                         WHERE email = ? AND senha = ?");
+    if($sql->execute(array($email,$senha))){
+        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+        if (count($info) > 0){
+            header('location:principal.php');
+        } else {
+            echo '<h6>Email de usuário não cadastrado</h6>';
         }
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -46,8 +29,8 @@ if (isset($_GET['cadastro'])) {
 </head>
 
 <body>
-    <div class="d-flex justify-content-xl-center bg-warning mb-5 ">
-        <h1>BROWSE COURSES</h1>
+    <div class="d-flex justify-content-xl-center bg-warning mb-5 seila">
+    <h1>BROWSE COURSES</h1>
     </div>
     <div class="container" >
     <a class="links" id="paracadastro"></a>
@@ -88,7 +71,7 @@ if (isset($_GET['cadastro'])) {
           <h1>Cadastro</h1> 
           
           <p> 
-            <label for="nome_cad">Seu Nome</label>
+            <label for="nome_cad">Seu nome</label>
             <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="Luiz Augusto" />
           </p>
           
@@ -103,7 +86,7 @@ if (isset($_GET['cadastro'])) {
           </p>
           
           <p> 
-            <input type="submit" value="Cadastrar" />
+           <a href="#paralogin"><input type="submit" value="Cadastrar"/> </a>
           </p>
           
           <p class="link">  
@@ -116,8 +99,8 @@ if (isset($_GET['cadastro'])) {
   </div> 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
