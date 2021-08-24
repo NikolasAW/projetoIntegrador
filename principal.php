@@ -16,7 +16,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                     <option value="4">RH</option>
                 </select>
             </div> 
-            <div class="col-sm">
+            <div class="col-sm"> 
                 <select class="custom-select" name="valor">
                     <option selected>Selecione Valor</option>
                     <option value="0-100">$0,00 a $100,00</option>
