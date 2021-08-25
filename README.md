@@ -2,7 +2,6 @@
 ## Grupo projeto integrador
 * Nikolas
 * Wendel
-* Leonardo
 * Eduardo
 
 ## Como usar 
