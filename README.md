@@ -1,6 +1,7 @@
 # ProjetoIntegrador
 ## Grupo projeto integrador
 * Nikolas
+* Leonardo
 * Wendel
 * Eduardo
 
