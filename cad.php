@@ -15,15 +15,13 @@ if (isset($_POST['acao'])) {
     if (count($info) > 0) {
       header('location:principal.php');
     } else {
-      echo '<h6>Email de usuário não cadastrado</h6>';
+      $aviso .= '<h6>Email de usuário não cadastrado!!</h6>';
     }
   }
 }
 
 ?>
-<div class="d-flex justify-content-xl-center bg-dark mb-5 ">
-  <h1 class="text-white">BROWSE COURSES</h1>
-</div>
+
 <div class="container">
   <div class="content p-5">
     <div id="login">
@@ -47,7 +45,11 @@ if (isset($_POST['acao'])) {
           Ainda não tem conta?
           <a href="index.php">Cadastre-se</a>
         </p>
+        <?php if ($aviso != "") :?>
+          <div class="alert alert-danger"><?php echo $aviso; ?></div>
+        <?php endif; ?>
       </form>
+
     </div>
   </div>
 </div>

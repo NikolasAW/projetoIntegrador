@@ -15,4 +15,6 @@ include_once(dirname(__FILE__)."/security.php");
   <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 
-<body>
+<body class="p-0 m-0">
+<?php
+include_once(dirname(__FILE__)."/menu.php");
