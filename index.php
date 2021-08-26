@@ -1,12 +1,8 @@
 <?php
 include_once(dirname(__FILE__)."/include/header.php");
 ?>
-
-  <div class="d-flex justify-content-xl-center bg-dark mb-5">
-    <h1 class="text-white">BROWSE COURSES</h1>
-  </div>
-  <div class="container">
-    <div class="content p-5">
+  <div class="container p-5">
+    <div class="content p-4">
       <div id="cadastro">
         <form method="post" action="">
           <h1>Cadastro</h1>
