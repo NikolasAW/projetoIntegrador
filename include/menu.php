@@ -1,14 +1,20 @@
 <div class="row">
     <div class="col-12">
-        <div class="d-flex justify-content-center bg-black">
-            <h1 class="text-white my-5 py-0">BROWSE COURSES</h1>
+        <div class="d-flex justify-content-center bg-white">
+            <h1 class="text-blue my-4 py-2">BROWSE COURSES</h1>
         </div>
     </div>
     <?php
     if (isset($_SESSION['logado'])) :
     ?>
         <div>
-            <a href="cad.php"><button type="button" class="btn btn-light btn-lg" style="position:absolute; top:0;left:0">Sair</button></a>
+            <input style="margin-left: 50%;" type="submit" id="sair" value="sair" name="sair"></input>
         </div>
+        <?php
+        if (isset($_POST["sair"])) {
+            session_destroy();
+            header('location: cad.php');
+        }
+        ?>
     <?php endif; ?>
 </div>

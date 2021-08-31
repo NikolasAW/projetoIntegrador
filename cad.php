@@ -6,7 +6,9 @@ include_once(dirname(__FILE__) . "/include/MySql.php");
 
 if (isset($_POST['acao'])) {
   $email = $_POST['email_login'];
+  // Verifica se o email está cadastrado
   $senha = md5($_POST['senha_login']);
+  // Verifica se a senha está cadastrada
 
   $sql = $pdo->prepare("SELECT * FROM cadastrados 
                          WHERE email = ? AND senha = ?");
@@ -14,16 +16,18 @@ if (isset($_POST['acao'])) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
     if (count($info) > 0) {
       header('location:principal.php');
+      // Quando usuário faz login, leva ele para a página principal
     } else {
       $aviso .= '<h6>Email de usuário não cadastrado!!</h6>';
+      // Avisa que o email não está cadastrado
     }
   }
 }
 
 ?>
 
-<div class="container">
-  <div class="content p-5">
+<div class="container p-5">
+  <div class="content p-4">
     <div id="login">
       <form method="post" action="">
         <h1>Login</h1>

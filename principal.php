@@ -2,11 +2,14 @@
 
 include_once(dirname(__FILE__) . "/include/header.php");
 ?>
-<div class="container bg-white">
+<div class="">
+    <a href="cad.php"><button type="button" class="btn btn-secondary btn-lg" style="position:absolute; top:0;;left:0">Sair</button></a>
+</div>
+<div class="container p-5">
 
     <div class="row">
 
-        <div class="col-12 py-3 bg-black">
+        <div class="col-12 py-4">
 
             <form class="form-inline" method="get" action="">
                 <div class="container">
@@ -34,6 +37,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                             <select class="custom-select form-control" name="cidade">
                                 <option selected>Selecione a localização</option>
                                 <option value="1">Joinville</option>
+                                <option value="2">Blumenau</option>
                             </select>
                         </div>
                         <div class="col-sm">
@@ -47,29 +51,31 @@ include_once(dirname(__FILE__) . "/include/header.php");
 
 
 
+
     <?php
 
     include_once(dirname(__FILE__) . "/include/MySql.php");
 
 
     $curso = isset($_GET['curso']) ? $_GET['curso'] : "*";
+    
     $valor = isset($_GET['valor']) ? $_GET['valor'] : "*";
-    $cidade = isset($_GET['cidade']) ? $_GET['cidade'] : "*";
 
+    $cidade = isset($_GET['cidade']) ? $_GET['cidade'] : "*";
 
     $sql = $pdo->prepare('SELECT * FROM curso WHERE categoria_curso = ?');
 
     if ($sql->execute(array($curso))) {
         $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-        echo '<div class="">';
+        echo '<div class="text-w    hite">';
         foreach ($info as $key => $values) {
-            echo '<div class="card" style="width: 18rem;">';
+            echo '<div class="card border-dark card bg-secondary" style="width: 66rem;">';
             echo '<div class="card-body">';
-
-            echo  "<h5 class='card-title'><b>Nome: </b>" . $values['nome'] . '</h5>';
-            echo '<p class="card-text">';
-            echo "<b>Código Curso:</b>" . $values['cod_curso'] . '<br>';
-            echo '<a class="btn btn-primary" href="' . $values['link_curso'] . '">Clique e conheça</a>';
+            echo  "<h5 class='card-title'><b>Curso: </b>" . $values['nome'] . '</h5>';
+            echo '<p class="card-title">';
+            echo "<b>Cidade: </b>" . $values['cidade'] . '<br>';
+            echo "<b>Valor: </b>" . $values['valor'] . '<br>';
+            echo '<a class="btn btn-light" href="' . $values['link_curso'] . '">Clique e conheça</a>';
 
             echo '</p>';
             echo '</div>';
@@ -77,6 +83,8 @@ include_once(dirname(__FILE__) . "/include/header.php");
     }
 
     ?>
+
+</div>
 
 </div>
 <?php

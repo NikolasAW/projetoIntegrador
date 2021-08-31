@@ -1,8 +1,13 @@
 <?php
 include_once(dirname(__FILE__)."/include/header.php");
 ?>
+<<<<<<< HEAD
+  <div class="container p-5">
+    <div class="content p-4">
+=======
   <div class="container">
     <div class="content p-5">
+>>>>>>> a09a30ff686ba69a2c20dff7de4610aaa8200e32
       <div id="cadastro">
         <form method="post" action="">
           <h1>Cadastro</h1>
