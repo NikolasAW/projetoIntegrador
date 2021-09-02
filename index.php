@@ -4,7 +4,7 @@ include_once(dirname(__FILE__)."/include/header.php");
   <div class="container p-5">
     <div class="content p-4">
       <div id="cadastro">
-        <form method="post" action="">
+        <form method="post" action=""> 
           <h1>Cadastro</h1>
 
           <p>
