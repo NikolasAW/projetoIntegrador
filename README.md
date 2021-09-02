@@ -4,6 +4,7 @@
 * Leonardo
 * Wendel
 * Eduardo
+* Rhuan
 
 ## Como usar 
 ### Instalação
