@@ -16,9 +16,9 @@ include_once(dirname(__FILE__) . "/include/header.php");
                         <div class="col-sm">
                             <select class="custom-select form-control" name="curso">
                                 <option selected>Selecione o curso</option>
-                                <option value="informatica">Técnico de Informática</option>
+                                <option value="informatica">Técnico em Administração</option>
                                 <option value="enfermagem">Técnico de Enfermagem</option>
-                                <option value="administracao">Técnico em Administração </option>
+                                <option value="administracao">Técnico de Informática</option>
                                 <option value="rh">RH</option>
                             </select>
                         </div>
@@ -35,7 +35,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                         <div class="col-sm">
                             <select class="custom-select form-control" name="cidade">
                                 <option selected>Selecione a localização</option>
-                                <option value="1">Joinville</option>
+                                <option value="Joinville">Joinville</option>
                                 <option value="2">Blumenau</option>
                             </select>
                         </div>
@@ -55,6 +55,16 @@ include_once(dirname(__FILE__) . "/include/header.php");
 
     include_once(dirname(__FILE__) . "/include/MySql.php");
 
+    $string="";
+    if (isset($_GET['curso']))
+        $string = $string." categoria_curso = '".$_GET['curso']."'";
+    if (isset($_GET['valor']))
+        $string = $string." AND valor = '".$_GET['valor']."'";
+    if (isset($_GET['cidade']))
+        $string = $string." AND cidade = '".$_GET['cidade']."'";
+
+
+    echo "Aqui: ".$string;    
 
     $curso = isset($_GET['curso']) ? $_GET['curso'] : "*";
     
@@ -62,9 +72,13 @@ include_once(dirname(__FILE__) . "/include/header.php");
 
     $cidade = isset($_GET['cidade']) ? $_GET['cidade'] : "*";
 
-    $sql = $pdo->prepare('SELECT * FROM curso WHERE categoria_curso = ?');
 
-    if ($sql->execute(array($curso))) {
+
+
+
+    $sql = $pdo->prepare('SELECT * FROM curso WHERE '.$string);
+
+    if ($sql->execute()) { 
         $info = $sql->fetchAll(PDO::FETCH_ASSOC);
         echo '<div class="text-w    hite">';
         foreach ($info as $key => $values) {
