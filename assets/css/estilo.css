@@ -1,16 +1,18 @@
 
-  
+  /* Imagem que está exibida na página de fundo */
   body{
     margin:10px;
     background-image: url("../images/Captura\ de\ tela\ 2021-08-10\ 150452.png");
     background-repeat: no-repeat;
     background-size: 2250px;
   }
-  
+
+  /* Faz a decoração do texto*/
   a{
     text-decoration: none;
   }
   
+  /* */
   a.links{
     display: none;
   }
@@ -21,6 +23,7 @@
     background: white;
   }
   
+/* Muda as configuraçoes do titulo */
   h1{
     font-size: 48px;
     color: #066a75;
@@ -30,6 +33,7 @@
     text-align: center;
     padding-bottom: 30px;
   }
+
   h1:after{
     content: ' ';
     display: block;
@@ -37,7 +41,7 @@
     height: 2px;
     margin-top: 10px;
   }
-  
+  /*É um paragrafo e com isso o paragrafo é mudado as margens, cores e desing das letras*/
   p{
     margin-bottom:15px;
   }
@@ -60,6 +64,7 @@
   input {
     outline: none;
   }
+  
   
   input:not([type="checkbox"]){
     width: 95%;
