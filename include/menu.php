@@ -4,7 +4,7 @@
         <!-- foi inserido o titulo para o site -->
             <h1 class="text-blue my-4 py-2">BROWSE COURSES</h1>
         </div>
-    </div>
+    </div> 
     <?php
     if (isset($_SESSION['logado'])) :
     ?>
