@@ -15,6 +15,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                 <div class="container">
                     <div class="row">
                         <div class="col-sm">
+                            <!-- Filtro de cursos -->
                             <select class="custom-select form-control" name="curso">
                                 <option selected>Selecione o curso</option>
                                 <option value="informatica">Técnico de Informática</option>
@@ -24,6 +25,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                             </select>
                         </div>
                         <div class="col-sm">
+                            <!-- Filtro de valores -->
                             <select class="custom-select form-control" name="valor">
                                 <option selected>Selecione Valor</option>
                                 <option value="0-100">$0,00 a $100,00</option>
@@ -34,6 +36,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                             </select>
                         </div>
                         <div class="col-sm">
+                            <!-- Filtro de localização -->
                             <select class="custom-select form-control" name="cidade">
                                 <option selected>Selecione a localização</option>
                                 <option value="1">Joinville</option>
@@ -58,11 +61,11 @@ include_once(dirname(__FILE__) . "/include/header.php");
 
 
     $curso = isset($_GET['curso']) ? $_GET['curso'] : "*";
-    
+    // Aparece os cursos do bd.
     $valor = isset($_GET['valor']) ? $_GET['valor'] : "*";
-
+    // Aparece os valores do bd.
     $cidade = isset($_GET['cidade']) ? $_GET['cidade'] : "*";
-
+    // Aparece as cidades do bd.
     $sql = $pdo->prepare('SELECT * FROM curso WHERE categoria_curso = ?');
 
     if ($sql->execute(array($curso))) {
