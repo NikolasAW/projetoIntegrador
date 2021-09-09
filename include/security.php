@@ -1,6 +1,6 @@
 <?php
 
-
+/// função do session_start utiliza um arquivo localizado na pasta temporária.
 session_start();
 include_once(dirname(__FILE__) . "/MySql.php");
 
