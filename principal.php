@@ -64,7 +64,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                 $string = $string . ' WHERE ';
             else
                 $string = $string . ' AND ';
-            $string = $string . " categoria_curso = '" . $_GET['curso'] . "'";
+            $string = $string . " categoria_curso = '". $_GET['curso'] . "'";
         }
         ///aqui filtramos os valores do BD.       
         if (isset($_GET['valor']) && $_GET['valor'] != 'Selecione Valor') {
