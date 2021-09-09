@@ -70,7 +70,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
 
     if ($sql->execute(array($curso))) {
         $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-        echo '<div class="text-w    hite">';
+        echo '<div class="text-white">';
         foreach ($info as $key => $values) {
             echo '<div class="card border-dark card bg-secondary" style="width: 66rem;">';
             echo '<div class="card-body">';
