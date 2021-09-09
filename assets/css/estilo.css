@@ -12,7 +12,7 @@
     text-decoration: none;
   }
   
-  /* */
+  
   a.links{
     display: none;
   }
@@ -33,7 +33,7 @@
     text-align: center;
     padding-bottom: 30px;
   }
-
+/*after cria um pseudo-elemento que é o último filho do elemento selecionado.*/
   h1:after{
     content: ' ';
     display: block;
@@ -41,13 +41,14 @@
     height: 2px;
     margin-top: 10px;
   }
-  /*É um paragrafo e com isso o paragrafo é mudado as margens, cores e desing das letras*/
+  /* É um paragrafo e com isso o paragrafo é mudado as margens, cores e desing das letras*/
   p{
     margin-bottom:15px;
   }
   p:first-child{
     margin: 0px;
   }
+  /* Representa uma legenda para um item em uma interface de usuário*/
   label{
     color: #405c60;
     position: relative;
@@ -132,6 +133,7 @@
     display: inline-block;
 
   }
+  /* Define o estilo do link quando passa o mouse por cima dele, a:active define o estilo do link ativono que foi "clicado" */
   .link a:hover {
     color: #39bfd7;
     background: #f7f7f7;
