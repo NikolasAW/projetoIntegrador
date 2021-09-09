@@ -6,7 +6,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
 </div>
 <div class="container p-5"> 
 
-    <div class="row">
+    <div class="row"> 
 
         <div class="col-12 py-4">
 
