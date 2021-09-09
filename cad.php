@@ -4,7 +4,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
 include_once(dirname(__FILE__) . "/include/MySql.php");
 
 
-if (isset($_POST['acao'])) {
+if (isset($_POST['acao'])) {  
   $email = $_POST['email_login'];
   // identificar o ato de cadastramento do email
   $senha = md5($_POST['senha_login']);
