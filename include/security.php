@@ -17,7 +17,7 @@ if (isset($_POST['cadastrar'])) {
 
   if ($senha == "") {
     $aviso .= "<b>Aviso</b>: Senha incorreta!";
-    // Avisa o usuário que a senha esta incorreta
+    // Avisa o usuário que a senha está incorreta
   } else {
     $sql = $pdo->prepare("SELECT * FROM cadastrados WHERE email = ?");
     if ($sql->execute(array($email))) {

@@ -6,9 +6,15 @@ include_once(dirname(__FILE__) . "/include/MySql.php");
 
 if (isset($_POST['acao'])) {
   $email = $_POST['email_login'];
-  // Verifica se o email está cadastrado
+<<<<<<< HEAD
+  // identificar o ato de cadastramento do email
   $senha = md5($_POST['senha_login']);
-  // Verifica se a senha está cadastrada
+  // identificar o ato de cadastramento da senha
+=======
+  // Verifica se o E-mail está cadastrado.
+  $senha = md5($_POST['senha_login']);
+  // Verifica se a senha está cadastrada.
+>>>>>>> 23e37e48e60ff6aa5cfec7ede8cbcb5ed77334d6
 
   $sql = $pdo->prepare("SELECT * FROM cadastrados 
                          WHERE email = ? AND senha = ?");
@@ -16,10 +22,17 @@ if (isset($_POST['acao'])) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
     if (count($info) > 0) {
       header('location:principal.php');
-      // Quando usuário faz login, leva ele para a página principal
+<<<<<<< HEAD
+      // quando a pessoa entra no site fazendo login, ele vai para a pagina principal do site
     } else {
       $aviso .= '<h6>Email de usuário não cadastrado!!</h6>';
-      // Avisa que o email não está cadastrado
+      // ele diz que o email nao esta cadastrado
+=======
+      // Após o usuário fazer o login, ele será redirecionado para a página principal.
+    } else {
+      $aviso .= '<h6>Email de usuário não cadastrado!!</h6>';
+      // Avisa o usuário que o email não está cadastrado no site.
+>>>>>>> 23e37e48e60ff6aa5cfec7ede8cbcb5ed77334d6
     }
   }
 }
@@ -31,6 +44,7 @@ if (isset($_POST['acao'])) {
     <div id="login">
       <form method="post" action="">
         <h1>Login</h1>
+      
         <p>
           <label for="email_login">Seu e-mail</label>
           <input id="email_login" name="email_login" required="required" type="text" placeholder="Nome@gmail.com" />
