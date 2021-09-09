@@ -2,7 +2,7 @@
 include_once(dirname(__FILE__) . "/include/header.php");
 ?>
 <div class="">
-    <button type="button" onclick="location.href='include/logout.php'" class="btn btn-secondary btn-lg" style="position:absolute; top:0;;left:0">Sair</button>
+    <button type="button" onclick="location.href='include/logout.php'" class="btn btn-primary btn-lg" style="position:absolute; top:0;;left:0">Sair</button>
 </div>
 <div class="container p-5"> 
 
