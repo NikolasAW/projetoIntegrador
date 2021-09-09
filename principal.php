@@ -20,7 +20,7 @@ include_once(dirname(__FILE__) . "/include/header.php");
                                 <option selected>Selecione o curso</option>
                                 <option value="informatica">Técnico de Informática</option>
                                 <option value="enfermagem">Técnico de Enfermagem</option>
-                                <option value="administracao">Técnico em Administração </option>
+                                <option value="administracao">Técnico em Administração </option> 
                                 <option value="rh">RH</option>
                             </select>
                         </div>
