@@ -15,6 +15,7 @@ if (isset($_POST['acao'])) {
   if ($sql->execute(array($email, $senha))) {
     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
     if (count($info) > 0) {
+      $_SESSION['logado'] = "logado";
       header('location:principal.php');
       // Quando usuário faz login, leva ele para a página principal
     } else {
