@@ -16,7 +16,7 @@
   a.links{
     display: none;
   }
-
+/* A propriedade CSS content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento. Objetos inseridos usando a propriedade content são elementos substituídos anônimos.*/
   .content{
     max-width: 500px;
     margin: 0 auto;
@@ -82,7 +82,8 @@
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
   }
-  
+
+  /*É usado para criar controles interativos para formulários baseados na web para receber dados do usuário.*/
   input[type="submit"]{
     width: 100%!important;
     cursor: pointer;  
@@ -117,6 +118,7 @@
    
     border-radius: 0 0  5px 5px;
   }
+  /* os links são definidos pela tag <a>. Dentro dessa tag incluímos o atributo href (Hypertext Reference), que é o endereço de destino do link. */
   .link a {
     font-weight: bold;
     background: #f7f8f1;
