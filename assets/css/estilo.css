@@ -1,29 +1,26 @@
 
-  /* Imagem que está exibida na página de fundo */
+  
   body{
     margin:10px;
     background-image: url("../images/Captura\ de\ tela\ 2021-08-10\ 150452.png");
     background-repeat: no-repeat;
     background-size: 2250px;
   }
-
-  /* Faz a decoração do texto*/
+  
   a{
     text-decoration: none;
   }
   
-  
   a.links{
     display: none;
   }
-/* A propriedade CSS content é usada com os pseudoelementos ::before e ::after para gerar conteúdo em um elemento. Objetos inseridos usando a propriedade content são elementos substituídos anônimos.*/
+
   .content{
     max-width: 500px;
     margin: 0 auto;
     background: white;
   }
   
-/* Muda as configuraçoes do titulo */
   h1{
     font-size: 48px;
     color: #066a75;
@@ -33,7 +30,6 @@
     text-align: center;
     padding-bottom: 30px;
   }
-/*after cria um pseudo-elemento que é o último filho do elemento selecionado.*/
   h1:after{
     content: ' ';
     display: block;
@@ -41,14 +37,13 @@
     height: 2px;
     margin-top: 10px;
   }
-  /* É um paragrafo e com isso o paragrafo é mudado as margens, cores e desing das letras*/
+  
   p{
     margin-bottom:15px;
   }
   p:first-child{
     margin: 0px;
   }
-  /* Representa uma legenda para um item em uma interface de usuário*/
   label{
     color: #405c60;
     position: relative;
@@ -66,7 +61,6 @@
     outline: none;
   }
   
-  
   input:not([type="checkbox"]){
     width: 95%;
     margin-top: 4px;
@@ -82,8 +76,7 @@
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
   }
-
-  /*É usado para criar controles interativos para formulários baseados na web para receber dados do usuário.*/
+  
   input[type="submit"]{
     width: 100%!important;
     cursor: pointer;  
@@ -118,7 +111,6 @@
    
     border-radius: 0 0  5px 5px;
   }
-  /* os links são definidos pela tag <a>. Dentro dessa tag incluímos o atributo href (Hypertext Reference), que é o endereço de destino do link. */
   .link a {
     font-weight: bold;
     background: #f7f8f1;
@@ -127,7 +119,7 @@
     margin-left: 10px;
     border: 1px solid #cbd518;
   
-    -webkit-border-radius: 4px; 
+    -webkit-border-radius: 4px;
     border-radius: 4px;  
   
     -webkit-transition: all 0.4s linear;
@@ -135,7 +127,6 @@
     display: inline-block;
 
   }
-  /* Define o estilo do link quando passa o mouse por cima dele, a:active define o estilo do link ativono que foi "clicado" */
   .link a:hover {
     color: #39bfd7;
     background: #f7f7f7;

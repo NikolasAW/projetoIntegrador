@@ -1,6 +1,6 @@
 <?php
 
-/// função do session_start utiliza um arquivo localizado na pasta temporária.
+
 session_start();
 include_once(dirname(__FILE__) . "/MySql.php");
 
@@ -17,7 +17,7 @@ if (isset($_POST['cadastrar'])) {
 
   if ($senha == "") {
     $aviso .= "<b>Aviso</b>: Senha incorreta!";
-    // Avisa o usuário que a senha está incorreta
+    // Avisa o usuário que a senha esta incorreta
   } else {
     $sql = $pdo->prepare("SELECT * FROM cadastrados WHERE email = ?");
     if ($sql->execute(array($email))) {
