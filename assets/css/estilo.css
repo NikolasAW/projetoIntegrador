@@ -5,6 +5,7 @@
     background-image: url("../images/Captura\ de\ tela\ 2021-08-10\ 150452.png");
     background-repeat: no-repeat;
     background-size: 2250px;
+    background-attachment: fixed;
   }
   
   a{

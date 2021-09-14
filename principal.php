@@ -83,8 +83,6 @@ include_once(dirname(__FILE__) . "/include/header.php");
             $string = $string . " cidade = '" . $_GET['cidade'] . "'";
         }
 
-        echo "Aqui: " . $string;
-
         /// aqui executa a string para funcionar os filtros.
         $sql = $pdo->prepare('SELECT * FROM curso ' . $string);
 
